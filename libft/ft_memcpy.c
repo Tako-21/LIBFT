@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 20:18:28 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/18 17:39:22 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/04/18 17:44:38 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ const void *restrict source, size_t size)
 //     /* Memory allocation and copy */
 //     copy = malloc( length );
 //     memcpy( copy, array, length );
+//only for test
 
 //     /* Display the copied values */
 //     for( length=0; length<5; length++ ) {
