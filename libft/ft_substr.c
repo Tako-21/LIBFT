@@ -6,21 +6,11 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 08:51:16 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/27 09:16:19 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/04/27 09:35:41 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -29,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	p = malloc(sizeof(char) * (len + 1));
+	if (!p)
+		return (NULL);
 	while (s[i] && len--)
 	{
 		p[i] = s[start];
@@ -39,11 +31,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (p);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int	main(void)
-// {
-// 	char	*s = "abcdef";
-// 	char	*p = ft_substr(s, 3, 2);
-// 	printf("%s\n", p);
-// }
+int	main(void)
+{
+	char	*s = "abcdef";
+	char	*p = ft_substr(s, 3, 2);
+	printf("%s\n", p);
+}
