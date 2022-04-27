@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 20:18:28 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/18 17:53:28 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/04/23 19:05:23 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ const void *restrict source, size_t size)
 	size_t	i;
 
 	i = 0;
-	while (i < size)
+	while (size--)
 	{
 		((char *)destination)[i] = ((char *)source)[i];
 		i++;
@@ -32,7 +32,7 @@ const void *restrict source, size_t size)
 
 // int main(void)
 // {
-// 	printf("WITH ORIGINAL FUNCTION\n");
+// printf("WITH ORIGINAL FUNCTION\n");
 //     int array [] = { 54, 85, 20, 63, 21 };
 //     int *copy = NULL;
 //     int length = sizeof( int ) * 5;
