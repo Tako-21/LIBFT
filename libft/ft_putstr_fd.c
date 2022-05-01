@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/27 08:51:16 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/30 16:32:21 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/05/01 22:30:59 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/01 22:50:07 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*p;
-	int		i;
+	write(fd, &c, 1);
+}
 
-	i = 0;
-	p = malloc(sizeof(char) * (len + 1));
-	if (!p)
-		return (NULL);
-	while (s[i] && len--)
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (s)
 	{
-		p[i] = s[start];
-		start++;
-		i++;
+		while (*s)
+		{
+			ft_putchar_fd(*s, fd);
+			s++;
+		}
 	}
-	p[start] = '\0';
-	return (p);
 }
 
 // #include <stdio.h>
+// #include<fcntl.h>
+// #include<errno.h>
+// #include <stdlib.h>
 
 // int	main(void)
 // {
-// 	char	*s = "abcdef";
-// 	char	*p = ft_substr(s, 3, 2);
-// 	printf("%s\n", p);
+// 	int	fd;
+
+// 	fd = open("test", O_RDWR);
+// 	ft_putstr_fd("Beautiful World", fd);
 // }

@@ -1,41 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/27 08:51:16 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/30 16:32:21 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/05/01 22:51:45 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/01 23:17:28 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*p;
-	int		i;
+	write(fd, &c, 1);
+}
 
-	i = 0;
-	p = malloc(sizeof(char) * (len + 1));
-	if (!p)
-		return (NULL);
-	while (s[i] && len--)
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nb;
+
+	nb = n;
+	if (nb < 0)
 	{
-		p[i] = s[start];
-		start++;
-		i++;
+		ft_putchar_fd('-', fd);
+		nb = -nb;
 	}
-	p[start] = '\0';
-	return (p);
+	if (nb >= 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+		ft_putchar_fd(nb + 48, fd);
 }
 
 // #include <stdio.h>
+// #include<fcntl.h>
+// #include<errno.h>
+// #include <stdlib.h>
 
 // int	main(void)
 // {
-// 	char	*s = "abcdef";
-// 	char	*p = ft_substr(s, 3, 2);
-// 	printf("%s\n", p);
+// 	int	fd;
+
+// 	fd = open("test", O_RDWR);
+// 	ft_putnbr_fd(-2147483648, fd);
 // }

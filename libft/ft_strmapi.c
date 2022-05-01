@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/27 08:51:16 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/30 16:32:21 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/04/30 19:00:40 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/01 22:50:44 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_strlen(char *str)
 {
-	char	*p;
-	int		i;
+	int	i;
 
 	i = 0;
-	p = malloc(sizeof(char) * (len + 1));
-	if (!p)
-		return (NULL);
-	while (s[i] && len--)
-	{
-		p[i] = s[start];
-		start++;
+	while (str[i])
 		i++;
-	}
-	p[start] = '\0';
-	return (p);
+	return (i);
 }
 
-// #include <stdio.h>
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	int		i;
+	char	*str;
 
-// int	main(void)
-// {
-// 	char	*s = "abcdef";
-// 	char	*p = ft_substr(s, 3, 2);
-// 	printf("%s\n", p);
-// }
+	if (!s || !f)
+		return (NULL);
+	i = 0;
+	str = malloc(sizeof(char) * ft_strlen((char *)s) + 1);
+	if (!str)
+		return (NULL);
+	while (str[i])
+	{
+		str[i] = (*f)(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
