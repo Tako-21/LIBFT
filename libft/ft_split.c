@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 18:15:03 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/30 16:30:08 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/02 13:08:07 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,19 @@ char	*ft_strlcpy(char *src, size_t endWord, size_t nbchar)
 
 	begin = (endWord - nbchar);
 	i = 0;
-	// printf("%d\n", nbchar);
 	word = malloc(sizeof(char) * (nbchar + 1));
-	// if (word == NULL);
-	// {
-	// 	printf("fail\n");
-	// 	return (NULL);
-	// }
+	printf("endWord : %ld\nnbchar : %ld\n", endWord, nbchar);
+	if (!word)
+		return (NULL);
+	if (src[begin] == '.')
+		begin ++;
+	printf("nbchar : %ld\nbegin : %d\n", nbchar, begin);
 	while (src[begin] && i < nbchar)
 	{
+		printf("src : %c\n", src[begin]);
 		word[i++] = src[begin++];
-		// printf("%c\n", src[begin]);
 	}
+	printf("word : %s\n", word);
 	word[i] = '\0';
 	return (word);
 }
@@ -87,6 +88,7 @@ char	**ft_split(char const *s, char c)
 			nbchar++;
 		if ((s[i] == c || i == ft_strlen((char *)s) - 1) && nbchar > 0)
 		{
+			printf("test");
 			split[index++] = ft_strlcpy((char *)s, i, nbchar);
 			nbchar = 0;
 		}
@@ -96,22 +98,22 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int	main(int argc, char **argv)
-// {
-// 	int	i;
+int	main(int argc, char **argv)
+{
+	int	i;
 
-// 	i = 0;
-// 	if (argc != 2)
-// 	{
-// 		printf("nombre d'arguments invalides\n");
-// 		return (EXIT_FAILURE);
-// 	}
+	i = 0;
+	if (argc != 2)
+	{
+		printf("nombre d'arguments invalides\n");
+		return (EXIT_FAILURE);
+	}
 
-// 	char	**str;
-// 	str = ft_split(argv[1], '.');
+	char	**str;
+	str = ft_split(argv[1], '.');
 
-// 	while (str[i])
-// 		printf("%s\n", str[i++]);
-// }
+	while (str[i])
+		printf("%s\n", str[i++]);
+}
