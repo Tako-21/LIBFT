@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 18:25:06 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/24 18:25:08 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/04 15:23:42 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size )
 
 // int main(void)
 // {
-// 	char	str[] = "Beautiful World";
+// 	char	str[] = "Beautiful World\200";
 
-// 	printf("%p\n", memchr(str, 'B', 14));
-// 	printf("%p\n", ft_memchr(str, 'B', 14));
+// 	printf("%p\n", memchr(str, '\0', 14));
+// 	printf("%p\n", ft_memchr(str, '\0', 14));
 // }

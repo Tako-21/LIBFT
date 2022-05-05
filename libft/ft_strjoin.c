@@ -6,13 +6,13 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 09:18:18 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/28 18:37:10 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:18:11 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+static int	ft_strlen(char *str)
 {
 	int	i;
 

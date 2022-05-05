@@ -6,14 +6,14 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 18:41:43 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/23 18:45:38 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:18:23 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-int	ft_strlen(char *str)
+static unsigned int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -26,20 +26,36 @@ int	ft_strlen(char *str)
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
-	int				n;
-	int				to_return;
+	unsigned int	j;
+	unsigned int	lenght_dest;
 
+	lenght_dest = ft_strlen(dest);
+	j = 0;
 	i = 0;
-	n = 0;
-	to_return = ft_strlen(src) + ft_strlen(dest);
+	if (size == 0 || ft_strlen(dest) >= size)
+		return (size + ft_strlen(src));
 	while (dest[i])
 		i++;
-	while (src[n] && i < (size - 1))
+	while (src[j] && i + j < size - 1)
 	{
-		dest[i] = src[n];
-		i++;
-		n++;
+		dest[i + j] = src[j];
+		j++;
 	}
-	dest[i] = '\0';
-	return (to_return);
+	dest[i + j] = '\0';
+	return (ft_strlen(src) + lenght_dest);
 }
+
+// #include <bsd/string.h>
+// #include <stdio.h>
+
+// int    main()
+// {
+//     char string[1] = "h";
+//     char s[] = "eys";
+
+//     printf("real : %li\n", strlcat(string, s, 10));
+
+//     char dtring[1] = "h";
+//     char d[] = "eys";
+//     printf("stan : %i\n", ft_strlcat(dtring, d, 10));
+// }

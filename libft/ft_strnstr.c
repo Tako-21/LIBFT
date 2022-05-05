@@ -6,21 +6,11 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 18:28:16 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/26 12:39:13 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:21:03 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {

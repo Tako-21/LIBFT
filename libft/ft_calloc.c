@@ -6,22 +6,27 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:52:05 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/26 14:43:30 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:03:50 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_calloc(size_t elementCount, size_t elementSize)
+//void	*ft_calloc(size_t elementCount, size_t elementSize)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	int		i;
 	char	*p;
+	size_t	n;
 
-	p = malloc(elementCount * elementSize);
+	i = 0;
+	n = (nmemb * size);
+	if (n/nmemb != size)
+		return (NULL);
+	p = malloc(nmemb * size);
 	if (!p)
 		return (NULL);
-	i = 0;
-	while (elementCount--)
+	while (n--)
 		p[i++] = 0;
 	return ((void *)p);
 }

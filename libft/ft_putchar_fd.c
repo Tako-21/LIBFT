@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 19:48:10 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/01 22:51:08 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/04 22:44:06 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_putchar_fd(char c, int fd)
 // 	c[len] = '\0';
 // 	printf("c : %s\n", c);
 // 	// ft_putchar_fd('a', fichier);
-}
+
 // #include<stdio.h>
 // #include <fcntl.h>
 // int main()
