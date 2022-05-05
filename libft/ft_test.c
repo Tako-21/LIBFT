@@ -23,5 +23,3 @@ int main(void)
 	}
 
 }
-__ATOMIC_ACQ_REL
-
