@@ -1,1 +1,2 @@
-libftTester/
+./libft/libftTester
+libft/ft_test.c
