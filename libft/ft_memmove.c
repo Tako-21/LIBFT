@@ -6,11 +6,12 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 17:44:37 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/04 22:43:11 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/07 16:28:49 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -20,10 +21,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (((char *) src) < ((char *) dest))
 	{
 		while (n--)
-		{
 			((char *)dest)[n] = ((char *)src)[n];
-			printf("dest : %s\n", (char *)dest);
-		}
 	}
 	else
 	{
@@ -43,11 +41,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 // 	char	s1[] = "abcdef";
 
 // 	ft_memmove(s + 1, s, 4);
+// 	ft_memcpy(s1 + 1, s1, 4);
 // 	printf("%s\n", s);
-
-// 	memmove(s1 + 1, s1, 4);
 // 	printf("%s\n", s1);
 
-// 	void	*dest = 15;
-// 	printf("dest : %p\n", dest);
+// 	// memmove(s1 + 1, s1, 4);
+// 	// ft_memcmp(s1 + 1, s1, 4);
+// 	// printf("%s\n", s1);
+
+// 	// void	*dest = 15;
+// 	// printf("dest : %p\n", dest);
 // }

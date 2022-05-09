@@ -6,13 +6,14 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 17:53:44 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/05 12:18:39 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/07 19:27:58 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
-static int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int		i;
 
@@ -24,16 +25,46 @@ static int	ft_strlen(char *str)
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int		i;
-	int					length_src;
+	size_t	i;
 
-	length_src = ft_strlen(src);
 	i = 0;
-	while (src[i] && i < size - 1)
+	if (size != 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (src[i] && i < (size - 1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	dest[i] = '\0';
-	return (length_src);
+	return (ft_strlen(src));
 }
+
+// void	ft_KO(int c)
+// {
+// 	printf("\033[1;31m%d. KO\033[00m\n", c);
+// }
+
+// void	ft_OK(int c)
+// {
+// 	printf("\033[1;32m%d. OK\033[00m\n", c);
+// }
+// #include <stdio.h>
+// #include <bsd/string.h>
+// #include "libft.h"
+
+// int	main(void)
+// {
+// 	char	*s1 = "Beautiful World";
+// 	char	s2[100];
+// 	char	s3[100];
+
+// 	printf("Generating test...\n\n");
+// 	if (ft_strlcpy(s1, s2, ft_strlen(s1) != strlcpy(s1, s3, ft_strlen(s1))))
+// 	{
+// 		ft_KO(1);
+// 		printf("Expected   :   %ld   %s\nGot   :   %ld   %s\n", strlcpy(s1, s2, ft_strlen(s1)), s2, strlcpy(s1, s3, ft_strlen(s1)), s3);
+// 	}
+// 	else
+// 		ft_OK(1);
+// }

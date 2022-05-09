@@ -6,11 +6,13 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 13:37:03 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/01 13:41:10 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:36:15 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stdio.h>
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

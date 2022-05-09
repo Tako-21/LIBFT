@@ -6,18 +6,20 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 20:18:28 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/23 19:05:23 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/07 17:52:19 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *restrict destination,
-const void *restrict source, size_t size)
+void	*ft_memcpy(void *restrict destination, const void *restrict source, size_t size)
 {
 	size_t	i;
 
 	i = 0;
+	if (!destination)
+		return (NULL);
 	while (size--)
 	{
 		((char *)destination)[i] = ((char *)source)[i];
@@ -30,32 +32,57 @@ const void *restrict source, size_t size)
 // #include <string.h>
 // #include <strings.h>
 
+// void	ft_KO(void)
+// {
+// 	printf("\033[1;31mKO\033[00m\n");
+// }
+
+// void	ft_OK(void)
+// {
+// 	printf("\033[1;32mOK\033[00m\n");
+// }
+
 // int main(void)
 // {
-// printf("WITH ORIGINAL FUNCTION\n");
 //     int array [] = { 54, 85, 20, 63, 21 };
-//     int *copy = NULL;
-//     int length = sizeof( int ) * 5;
+//     int array2 [] = { 54, 85, 20, 63, 21 };
+//     // char	*array = NULL;
+//     // char	*array2 = NULL;
+// 	int *copy = NULL;
+//     int *copy2 = NULL;
+// 	int	i = 0;
 
 //     /* Memory allocation and copy */
-//     copy = malloc( length );
-//     memcpy( copy, array, length );
+//     // copy = malloc(sizeof( int ) * 5);
+//     // copy2 = malloc(sizeof( int ) * 5);
+//     memcpy(copy, array, 1000);
+//     ft_memcpy(copy2, array2, 1000);
 
-//     /* Display the copied values */
-//     for( length=0; length<5; length++ ) {
-//         printf( "%d ", copy[ length ]);
-//     }
-//     printf( "\n" );
+// 	while (i < 5)
+// 	{
+// 		if (copy[i] != copy2[i])
+// 		{
+// 			ft_KO();
+// 			printf("copy[%d]  : %d\ncopy2[%d] : %d\n", i, copy[i], i, copy2[i]);
+// 		}
+// 		else
+// 			ft_OK();
+// 		i++;
+// 	}
+// 	i = 0;
+// 	bzero(copy, 17); // VERIFY WITH YOUR OWN FUNCTION.
+// 	ft_bzero(copy2, 17); // VERIFY WITH YOUR OWN FUNCTION.
+// 	printf("CHECK BZERO : \n");
+// 	while (i < 5)
+// 	{
+// 		if (copy[i] != copy2[i])
+// 		{
+// 			ft_KO();
+// 			printf("copy[%d] : %d\ncopy2[%d] : %d\n", i, copy[i], i, copy2[i]);
+// 		}
+// 		else
+// 			ft_OK();
+// 		i++;
+// 	}
 
-// 	printf("WITH MY FUNCTION\n");
-
-// 	//bzero(copy, 17); // VERIFY WITH YOUR OWN FUNCTION.
-// 	int *copy2 = NULL;
-// 	copy2 = malloc(20);
-// 	ft_memcpy(copy2, array, 20);
-
-// 	/* Display the copied values */
-//     for( length=0; length<5; length++ ) {
-//         printf( "%d ", copy2[ length ] );
-//     }
 // }

@@ -6,38 +6,50 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 20:22:14 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/14 21:02:51 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/06 18:25:28 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-#include <stdio.h>
+#include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (((char *)s)[i] && i < n)
+	while (i < n)
 	{
 		((char *)s)[i] = '\0';
 		i++;
 	}
 }
 
+// #include <strings.h>
 // #include <stdio.h>
+// #include "libft.h"
+
+// void	ft_KO(void)
+// {
+// 	printf("\033[1;31mKO\033[00m\n");
+// }
+
+// void	ft_OK(void)
+// {
+// 	printf("\033[1;32mOK\033[00m\n");
+// }
 
 // int	main(void)
 // {
-// 	char	*s1 = "\0";
-// 	char	*s2 = "Cette phrase n'existera bientot plus...";
+// 	char	s1[] = "aBeautiful World\n\t\t\t\200aaa";
+// 	char	s2[] = "aBeautiful World\n\t\t\t\200aaa";
+// 	size_t size;
 
-// 	printf("string1 before ft_bzero : %s\n", s2);
-// 	ft_bzero(s2, 2);
-// 	printf("string1 after ft_bzero  : %s\n", s2);
-
-// 	printf("string2 before bzero : %s\n", s2);
-// 	bzero(s2, 2);
-// 	printf("string2 after bzero  : %s\n", s2);
+// 	size = ft_strlen(s2);
+// 	bzero(s2, size);
+// 	ft_bzero(s1, size);
+// 		if (ft_strncmp(s1, s2, size))
+// 			ft_KO();
+// 		else
+// 			ft_OK();
 
 // }

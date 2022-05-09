@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 12:57:00 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/04/01 13:34:55 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/06 12:46:15 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,22 @@ int	ft_isprint(int c)
 	return (c > 31 && c < 127);
 }
 
-// #ifdef MAIN
+// #include <stdio.h>
+// #include <ctype.h>
 
 // int	main(void)
 // {
-// 	int	i;
-
-// 	i = 0;
-// 	for (i = '0'; i <= 255; i++)
+// 	int c = -255;
+// 	while (c < 255)
 // 	{
-// 		if (ft_isprint(i) && isprint(i))
-// 			printf("works'fine %c\n", i);
+// 		if ((ft_isprint(c) > 0 && isprint(c) > 0) || (ft_isprint(c) == 0 && isprint(c) == 0))
+// 			printf ("\033[0;32mOK\033[00m\n");
 // 		else
-// 			printf("error on %c\n", i);
+// 		{
+// 			printf("\033[1;31mKO\033[00m\n");
+// 			printf("%d\n%c\n", c, c);
+// 			return (0);
+// 		}
+// 		c++;
 // 	}
 // }
-// #endif
