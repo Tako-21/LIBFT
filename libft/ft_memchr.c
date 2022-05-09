@@ -21,7 +21,7 @@ void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size )
 		return (NULL);
 	while (size--)
 	{
-		if (((char *)memoryBlock)[i] == searchedChar)
+		if (((char *)memoryBlock)[i] == (char)searchedChar)
 			return (&(((char *)memoryBlock)[i]));
 		i++;
 	}
