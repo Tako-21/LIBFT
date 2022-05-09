@@ -6,18 +6,21 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 17:50:01 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/01 22:49:53 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/10 00:52:23 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int	len(long nb)
 {
 	int	i;
 
 	i = 0;
-	if (nb < 0)
+	if (nb == 0)
+		i++;
+	else if (nb < 0)
 	{
 		nb = -nb;
 		i++;
@@ -62,5 +65,7 @@ char	*ft_itoa(int n)
 
 // int	main(void)
 // {
-// 	printf("%s\n", ft_itoa(-42));
+// 	char *s = ft_itoa(0);
+// 	// printf("%s\n", s);
+// 	free(s);
 // }

@@ -6,13 +6,13 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 18:15:03 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/05 12:17:12 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/10 00:27:14 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int	ft_strlen(char *str)
+static int	ft_strrlen(const char *str)
 {
 	int	i;
 
@@ -54,6 +54,8 @@ char	*ft_initword(char *src, size_t endWord, size_t nbchar, char c)
 	char	*word;
 
 	begin = (endWord - nbchar);
+	if (begin < 0)
+		begin -= begin;
 	i = 0;
 	word = malloc(sizeof(char) * (nbchar + 1));
 	if (!word)
@@ -79,11 +81,11 @@ char	**ft_split(char const *s, char c)
 	split = (char **)malloc(sizeof(char *) * (nb_words(s, c) + 1));
 	if (!s || !split)
 		return (NULL);
-	while (i < ft_strlen((char *)s))
+	while (i < ft_strrlen((char *)s))
 	{
 		if (s[i] != c)
 			nbchar++;
-		if ((s[i] == c || i == ft_strlen((char *)s) - 1) && nbchar > 0)
+		if ((s[i] == c || i == ft_strrlen((char *)s) - 1) && nbchar > 0)
 		{
 			split[index++] = ft_initword((char *)s, i, nbchar, c);
 			nbchar = 0;
@@ -95,25 +97,13 @@ char	**ft_split(char const *s, char c)
 }
 
 // #include <stdio.h>
+// #include "libft.h"
 
-// int	main(int argc, char **argv)
+// int	main()
 // {
-// 	int	i;
+// 	char	*splitme = ft_strdup("Tripouille");
+// 	char	**str = ft_split(splitme, ' ');
 
-// 	i = 0;
-// 	if (argc != 3)
-// 	{
-// 		printf("nombre d'arguments invalides\n");
-// 		return (EXIT_FAILURE);
-// 	}
-
-// 	char	**str;
-// 	str = ft_split(argv[1], argv[2][0]);
-// 	while (str[i])
-// 		printf("%s\n", str[i++]);
-
-// 	i = 0;
 // 	free(str[0]);
-// 	free(str[1]);
 // 	free(str);
 // }
