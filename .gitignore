@@ -4,3 +4,5 @@ libft/libft_fr.subject.pdf
 libft/*.o
 *.swp
 libft/.swp
+*.nfs
+libft/.swp
