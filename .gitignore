@@ -2,3 +2,5 @@ libft/libftTester
 libft/ft_test.c
 libft/libft_fr.subject.pdf
 libft/*.o
+*.swp
+libft/.swp
