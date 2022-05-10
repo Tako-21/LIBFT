@@ -1,50 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/01 22:51:45 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/05 12:22:14 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/04/01 12:27:02 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/06 12:08:42 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-static void	ft_putchar_fd(char c, int fd)
+int	ft_isdigit(int c)
 {
-	write(fd, &c, 1);
-}
-
-void	ft_putnbr_fd(int n, int fd)
-{
-	long	nb;
-
-	nb = n;
-	if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nb = -nb;
-	}
-	if (nb >= 9)
-	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
-	}
-	else
-		ft_putchar_fd(nb + 48, fd);
+	return (c >= '0' && c <= '9');
 }
 
 // #include <stdio.h>
-// #include<fcntl.h>
-// #include<errno.h>
-// #include <stdlib.h>
+// #include <ctype.h>
 
 // int	main(void)
 // {
-// 	int	fd;
-
-// 	fd = open("test", O_RDWR);
-// 	ft_putnbr_fd(-2147483648, fd);
+// 	int c = 4;
+// 	while (c < 500)
+// 	{
+// 		if ((ft_isdigit(c) > 0 && isdigit(c) > 0) 
+//		|| (ft_isdigit(c) == 0 && isdigit(c) == 0))
+// 			printf ("\033[0;32mOK\033[00m\n");
+// 		else
+// 		{
+// 			printf("\033[1;31mKO\033[00m\n");
+// 			return (0);
+// 		}
+// 		c++;
+// 	}
 // }

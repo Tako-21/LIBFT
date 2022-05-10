@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 18:25:06 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/04 15:23:42 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/04/01 12:57:00 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/06 12:46:15 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <ctype.h>
 
-void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size )
+int	ft_isprint(int c)
 {
-	size_t	i;
-
-	i = 0;
-	if ((char *)memoryBlock == NULL)
-		return (NULL);
-	while (size--)
-	{
-		if (((char *)memoryBlock)[i] == (char)searchedChar)
-			return (&(((char *)memoryBlock)[i]));
-		i++;
-	}
-	return (NULL);
+	return (c > 31 && c < 127);
 }
 
-// #include <string.h>
 // #include <stdio.h>
+// #include <ctype.h>
 
-// int main(void)
+// int	main(void)
 // {
-// 	char	str[] = "Beautiful World\200";
-
-// 	printf("%p\n", memchr(str, '\0', 14));
-// 	printf("%p\n", ft_memchr(str, '\0', 14));
+// 	int c = -255;
+// 	while (c < 255)
+// 	{
+// 		if ((ft_isprint(c) > 0 && isprint(c) > 0) 
+//			|| (ft_isprint(c) == 0 && isprint(c) == 0))
+// 			printf ("\033[0;32mOK\033[00m\n");
+// 		else
+// 		{
+// 			printf("\033[1;31mKO\033[00m\n");
+// 			printf("%d\n%c\n", c, c);
+// 			return (0);
+// 		}
+// 		c++;
+// 	}
 // }

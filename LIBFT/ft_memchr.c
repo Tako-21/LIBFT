@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 12:25:30 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/06 12:07:34 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/04/24 18:25:06 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/04 15:23:42 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 
-int	ft_isalpha(int c)
+void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size )
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	size_t	i;
+
+	i = 0;
+	while (size--)
+	{
+		if (((char *)memoryBlock)[i] == (char)searchedChar)
+			return (&(((char *)memoryBlock)[i]));
+		i++;
+	}
+	return (NULL);
 }
 
-
+// #include <string.h>
 // #include <stdio.h>
-// #include <ctype.h>
 
-// int	main(void)
+// int main(void)
 // {
-// 	int c = -100;
-// 	while (c < 500)
-// 	{
-// 	if ((ft_isalpha(c) > 0 && isalpha(c) > 0) || (ft_isalpha(c) == 0 && isalpha(c) == 0))
-// 		printf ("\033[0;32mOK\033[00m\n");
-// 	else
-// 	{
-// 		printf("\033[1;31mKO\033[00m\n");
-// 		return (0);
-// 	}
-// 	c++;
-// 	}
-// }
+// 	char	str[] = "Beautiful World\200";
 
+// 	printf("%p\n", memchr(str, '\0', 14));
+// 	printf("%p\n", ft_memchr(str, '\0', 14));
+// }

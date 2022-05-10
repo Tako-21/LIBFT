@@ -1,36 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 12:24:50 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/06 12:17:40 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/04/26 14:44:22 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/05 12:17:27 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include <stdlib.h>
+
+static int	ft_strlen(char *str)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'));
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
+char	*ft_strdup(const char *src)
+{
+	int		i;
+	char	*p;
+
+	i = 0;
+	p = malloc(sizeof(char) * ft_strlen((char *)src) + 1);
+	if (!p)
+		return (NULL);
+	while (src[i])
+	{
+		p[i] = src[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
+}
+
+// #include <string.h>
 // #include <stdio.h>
-// #include <ctype.h>
 
 // int	main(void)
 // {
-// 	int c = 0;
-// 	while (c < 500)
-// 	{
-// 		if ((ft_isalnum(c) > 0 && isalnum(c) > 0) || (ft_isalnum(c) == 0 && isalnum(c) == 0))
-// 			printf ("\033[0;32mOK\033[00m\n");
-// 		else
-// 		{
-// 			printf("\033[1;31mKO\033[00m\n");
-// 			printf("%d\n%c\n", c, c);
-// 			return (0);
-// 		}
-// 		c++;
-// 	}
+// 	char	*s = "Beautiful World";
+// 	char	*p = ft_strdup(s);
+
+// 	printf("%s\n", ft_strdup(p));
 // }

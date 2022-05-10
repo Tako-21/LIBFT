@@ -13,16 +13,6 @@
 #include <stdio.h>
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
@@ -80,7 +70,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 // 	if (ft_strlcpy(s1, s2, ft_strlen(s1) != strlcpy(s1, s3, ft_strlen(s1))))
 // 	{
 // 		ft_KO(1);
-// 		printf("Expected   :   %ld   %s\nGot   :   %ld   %s\n", strlcpy(s1, s2, ft_strlen(s1)), s2, strlcpy(s1, s3, ft_strlen(s1)), s3);
+// 		printf("Expected   :   %ld   %s\nGot   :   %ld   %s\n", 
+//				strlcpy(s1, s2, ft_strlen(s1)), s2, 
+//					strlcpy(s1, s3, ft_strlen(s1)), s3);
 // 	}
 // 	else
 // 		ft_OK(1);

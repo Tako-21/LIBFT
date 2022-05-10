@@ -13,19 +13,19 @@
 #include <stdio.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict destination, const void *restrict source, size_t size)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	if (!destination)
+	if (!dst && !src)
 		return (NULL);
 	while (size--)
 	{
-		((char *)destination)[i] = ((char *)source)[i];
+		((char *)dst)[i] = ((char *)src)[i];
 		i++;
 	}
-	return (destination);
+	return (dst);
 }
 
 // #include <stdlib.h>
