@@ -7,3 +7,6 @@ libft/.swp
 *.nfs
 libft/.swp
 .vscode*
+LIBFT/libftTester
+Libftest
+Libft-unit-test

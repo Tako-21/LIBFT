@@ -1,40 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 18:25:06 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/04 15:23:42 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/04/26 14:44:22 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/05 12:17:27 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
 
-void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size )
+static int	ft_strlen(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if ((char *)memoryBlock == NULL)
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(const char *src)
+{
+	int		i;
+	char	*p;
+
+	i = 0;
+	p = malloc(sizeof(char) * ft_strlen((char *)src) + 1);
+	if (!p)
 		return (NULL);
-	while (size--)
+	while (src[i])
 	{
-		if (((char *)memoryBlock)[i] == (char)searchedChar)
-			return (&(((char *)memoryBlock)[i]));
+		p[i] = src[i];
 		i++;
 	}
-	return (NULL);
+	p[i] = '\0';
+	return (p);
 }
 
 // #include <string.h>
 // #include <stdio.h>
 
-// int main(void)
+// int	main(void)
 // {
-// 	char	str[] = "Beautiful World\200";
+// 	char	*s = "Beautiful World";
+// 	char	*p = ft_strdup(s);
 
-// 	printf("%p\n", memchr(str, '\0', 14));
-// 	printf("%p\n", ft_memchr(str, '\0', 14));
+// 	printf("%s\n", ft_strdup(p));
 // }

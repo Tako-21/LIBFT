@@ -19,8 +19,6 @@ void	*ft_memset(void *pointer, int value, size_t count)
 	size_t	i;
 
 	i = 0;
-	if (pointer == NULL)
-		return (NULL);
 	while (i < count)
 	{
 		((char *)pointer)[i] = value;
