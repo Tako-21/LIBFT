@@ -13,13 +13,6 @@ all :		$(NAME)
 $(NAME) : 	$(OBJS)
 		ar -rcs $(NAME) $(OBJS)
 
-#$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
-
-#so:
-#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-#	gcc -nostartfiles -shared -o libft.so $(OBJS)
-
-
 clean :
 	rm -f $(OBJS)
 
@@ -28,4 +21,4 @@ fclean :	clean
 
 re :		fclean all
 
-
+.PHONY:		all clean fclean re
