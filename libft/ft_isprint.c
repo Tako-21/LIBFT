@@ -26,7 +26,8 @@ int	ft_isprint(int c)
 // 	int c = -255;
 // 	while (c < 255)
 // 	{
-// 		if ((ft_isprint(c) > 0 && isprint(c) > 0) || (ft_isprint(c) == 0 && isprint(c) == 0))
+// 		if ((ft_isprint(c) > 0 && isprint(c) > 0) 
+//			|| (ft_isprint(c) == 0 && isprint(c) == 0))
 // 			printf ("\033[0;32mOK\033[00m\n");
 // 		else
 // 		{

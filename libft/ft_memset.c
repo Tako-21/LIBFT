@@ -54,7 +54,8 @@ void	*ft_memset(void *pointer, int value, size_t count)
 // 		if (array[i] != array2[i])
 // 		{
 // 			printf("\033[1;31mKO\033[00m\n");
-// 		 	printf("%-*s->  array[%d]   :  %d\n%-*s->  array2[%d]  :  %d\n", 15, "Expected", i, array[i], 15, "Got", i, array2[i]);
+// 		 	printf("%-*s->  array[%d]   :  %d\n%-*s->  array2[%d]  :  %d\n", 15, 
+//			"Expected", i, array[i], 15, "Got", i, array2[i]);
 // 			return (0);
 // 		}
 // 		else

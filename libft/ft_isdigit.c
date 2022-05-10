@@ -23,7 +23,8 @@ int	ft_isdigit(int c)
 // 	int c = 4;
 // 	while (c < 500)
 // 	{
-// 		if ((ft_isdigit(c) > 0 && isdigit(c) > 0) || (ft_isdigit(c) == 0 && isdigit(c) == 0))
+// 		if ((ft_isdigit(c) > 0 && isdigit(c) > 0) 
+//		|| (ft_isdigit(c) == 0 && isdigit(c) == 0))
 // 			printf ("\033[0;32mOK\033[00m\n");
 // 		else
 // 		{

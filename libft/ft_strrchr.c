@@ -23,32 +23,10 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-// char	*ft_strrchr(const char *str, int searchedChar )
-// {
-// 	unsigned char	usearched;
-// 	int 			i;
-	
-// 	usearched = searchedChar;
-// 	i = ft_strlen((char *)str);
-// 	if (!str)
-// 		return (NULL);
-// 	str += ft_strlen((char *)str);
-// 	// printf("str  + :  %s\n", str + ft_strlen((char *)str));
-// 	// printf("str    :  %s\n", str);
-
-// 	while (i-- >= 0)
-// 	{
-// 		if (*str == usearched)
-// 			return ((char *)&(*str));
-// 		str--;
-// 	}
-// 	return (NULL);
-// }
-
 char	*ft_strrchr(const char *str, int searchedChar )
 {
-	int 			i;
-	
+	int	i;
+
 	i = ft_strlen((char *)str);
 	if (!str)
 		return (NULL);
@@ -62,34 +40,33 @@ char	*ft_strrchr(const char *str, int searchedChar )
 	return (NULL);
 }
 
-#ifdef MAIN
+// #ifdef MAIN
 
-#include <string.h>
+// #include <string.h>
 
-static void	ft_KO(int c)
-{
-	printf("\033[1;31m%d. KO\033[00m\n", c);
-}
+// static void	ft_KO(int c)
+// {
+// 	printf("\033[1;31m%d. KO\033[00m\n", c);
+// }
 
-static void	ft_OK(int c)
-{
-	printf("\033[1;32m%d. OK\033[00m\n", c);
-}
+// static void	ft_OK(int c)
+// {
+// 	printf("\033[1;32m%d. OK\033[00m\n", c);
+// }
 
-int	main(void)
-{
-	char	*s = "bEWIUSAD";
-	int		c = 256;
-	
-	s = ft_strrchr(s, c);
-	// if (!strcmp(ft_strrchr(s, c), strrchr(s, c)))
-	// {
-		// ft_KO(1);
-		printf("ft_strr : %s\n", ft_strrchr(s, c));
-		printf("strr : %s\n", strrchr(s, c));
-	// }	
-	// else
-		// ft_OK(1);
-}
+// int	main(void)
+// {
+// 	char	*s = "bEWIUSAD";
+// 	int		c = 256;
+// 	s = ft_strrchr(s, c);
+//	if (!strcmp(ft_strrchr(s, c), strrchr(s, c)))
+// 	// {
+// 		// ft_KO(1);
+// 		printf("ft_strr : %s\n", ft_strrchr(s, c));
+// 		printf("strr : %s\n", strrchr(s, c));
+// 	// }	
+// 	// else
+// 		// ft_OK(1);
+// }
 
-#endif
+// #endif

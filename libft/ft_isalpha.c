@@ -10,12 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 int	ft_isalpha(int c)
 {
 	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
-
 
 // #include <stdio.h>
 // #include <ctype.h>
@@ -25,7 +23,8 @@ int	ft_isalpha(int c)
 // 	int c = -100;
 // 	while (c < 500)
 // 	{
-// 	if ((ft_isalpha(c) > 0 && isalpha(c) > 0) || (ft_isalpha(c) == 0 && isalpha(c) == 0))
+// 	if ((ft_isalpha(c) > 0 && isalpha(c) > 0) 
+//	|| (ft_isalpha(c) == 0 && isalpha(c) == 0))
 // 		printf ("\033[0;32mOK\033[00m\n");
 // 	else
 // 	{
@@ -35,4 +34,3 @@ int	ft_isalpha(int c)
 // 	c++;
 // 	}
 // }
-

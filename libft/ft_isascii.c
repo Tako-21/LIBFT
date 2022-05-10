@@ -23,7 +23,8 @@ int	ft_isascii(int c)
 // 	int c = -255;
 // 	while (c < 255)
 // 	{
-// 		if ((ft_isascii(c) > 0 && isascii(c) > 0) || (ft_isascii(c) == 0 && isascii(c) == 0))
+// 		if ((ft_isascii(c) > 0 && isascii(c) > 0) 
+//		|| (ft_isascii(c) == 0 && isascii(c) == 0))
 // 			printf ("\033[0;32mOK\033[00m\n");
 // 		else
 // 		{

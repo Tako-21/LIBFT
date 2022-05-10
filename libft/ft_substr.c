@@ -42,7 +42,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*p;
 	int		i;
-	size_t smalloc;
+	size_t	smalloc;
 
 	smalloc = ft_checkmalloc((char *)s, start, len);
 	i = 0;
@@ -59,13 +59,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (p);
 }
 
-#include <stdio.h>
-#ifdef MAIN
+// #include <stdio.h>
+// #ifdef MAIN
 
-int	main(void)
-{
-	char *s = ft_substr("tripouille", 0, 42000);
-	free(s);
-}
+// int	main(void)
+// {
+// 	char *s = ft_substr("tripouille", 0, 42000);
+// 	free(s);
+// }
 
-#endif
+// #endif

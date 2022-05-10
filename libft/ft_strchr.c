@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *string, int searchedChar )
 {
-	int	i;
+	int				i;
 	unsigned char	sch;
 
 	i = 0;
