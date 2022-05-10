@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 19:00:40 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/05 12:18:51 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/10 00:59:19 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ static int	ft_strlen(char *str)
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*str;
+	unsigned int		i;
+	char				*str;
 
-	if (!s || !f)
+	if (!s)
 		return (NULL);
 	i = 0;
 	str = malloc(sizeof(char) * ft_strlen((char *)s) + 1);
 	if (!str)
 		return (NULL);
-	while (str[i])
+	while (s[i])
 	{
 		str[i] = (*f)(i, s[i]);
 		i++;
