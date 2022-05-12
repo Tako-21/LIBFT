@@ -20,11 +20,11 @@ int	ft_isdigit(int c)
 
 // int	main(void)
 // {
-// 	int c = 4;
-// 	while (c < 500)
+// 	int c = 0;
+// 	while (c < 600)
 // 	{
 // 		if ((ft_isdigit(c) > 0 && isdigit(c) > 0) 
-//		|| (ft_isdigit(c) == 0 && isdigit(c) == 0))
+// 		|| (ft_isdigit(c) == 0 && isdigit(c) == 0))
 // 			printf ("\033[0;32mOK\033[00m\n");
 // 		else
 // 		{

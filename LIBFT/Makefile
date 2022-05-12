@@ -13,6 +13,10 @@ all :		$(NAME)
 $(NAME) : 	$(OBJS)
 		ar -rcs $(NAME) $(OBJS)
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
 clean :
 	rm -f $(OBJS)
 

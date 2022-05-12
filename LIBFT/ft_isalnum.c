@@ -16,23 +16,24 @@ int	ft_isalnum(int c)
 		|| (c >= '0' && c <= '9'));
 }
 
-// #include <stdio.h>
-// #include <ctype.h>
+#include <stdio.h>
+#include <ctype.h>
 
-// int	main(void)
-// {
-// 	int c = 0;
-// 	while (c < 500)
-// 	{
-// 		if ((ft_isalnum(c) > 0 && isalnum(c) > 0) 
-// 		|| (ft_isalnum(c) == 0 && isalnum(c) == 0))
-// 			printf ("\033[0;32mOK\033[00m\n");
-// 		else
-// 		{
-// 			printf("\033[1;31mKO\033[00m\n");
-// 			printf("%d\n%c\n", c, c);
-// 			return (0);
-// 		}
-// 		c++;
-// 	}
-// }
+int	main(void)
+{
+	int c = 0;
+	while (c < 500)
+	{
+		if ((ft_isalnum(c) > 0 && isalnum(c) > 0) 
+		|| (ft_isalnum(c) == 0 && isalnum(c) == 0))
+			// printf ("\033[0;32mOK\033[00m\n");
+			printf("\n");
+		else
+		{
+			printf("\033[1;31mKO\033[00m\n");
+			printf("%d\n%c\n", c, c);
+			// return (0);
+		}
+		c++;
+	}
+}
