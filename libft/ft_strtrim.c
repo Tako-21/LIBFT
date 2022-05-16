@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 09:54:24 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/05 12:19:37 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:07:58 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_charinset(char c, char const *s1)
+static int	ft_charinset(char c, char const *s1)
 {
 	int	i;
 

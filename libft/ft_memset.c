@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 16:24:57 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/07 16:17:24 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:11:33 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 void	*ft_memset(void *pointer, int value, size_t count)
@@ -52,7 +50,7 @@ void	*ft_memset(void *pointer, int value, size_t count)
 // 		if (array[i] != array2[i])
 // 		{
 // 			printf("\033[1;31mKO\033[00m\n");
-// 		 	printf("%-*s->  array[%d]   :  %d\n%-*s->  array2[%d]  :  %d\n", 15, 
+// 		 	printf("%-*s->  array[%d]   :  %d\n%-*s->  array2[%d]  :  %d\n", 15,
 //			"Expected", i, array[i], 15, "Got", i, array2[i]);
 // 			return (0);
 // 		}

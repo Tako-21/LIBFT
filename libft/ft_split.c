@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 18:15:03 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/10 00:27:14 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:06:50 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_strrlen(const char *str)
 	return (i);
 }
 
-int	nb_words(char const *s, char c)
+static int	nb_words(char const *s, char c)
 {
 	int	nb_words;
 	int	check_word;
@@ -47,7 +47,7 @@ int	nb_words(char const *s, char c)
 	return (nb_words);
 }
 
-char	*ft_initword(char *src, size_t endWord, size_t nbchar, char c)
+static char	*ft_initword(char *src, size_t endWord, size_t nbchar, char c)
 {
 	size_t	i;
 	int		begin;
