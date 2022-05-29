@@ -1,4 +1,4 @@
-# LIBFT
+# Libft
 
 ## Description
 
