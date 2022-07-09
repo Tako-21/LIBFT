@@ -8,7 +8,7 @@ This first project as a student of 42 consists of recoding a certain number of f
 
 `git clone https://github.com/Tako-21/libft.git`
 
-
+`cd LIBFT`
 
 `make` to compile without bonus
 
